@@ -1,13 +1,13 @@
 if !(isServer) exitWith {};
 
-debugperf = false;
+debugperf = true;
 
 private _currentTime = time;
 private _hills = colinas - colinasAA;
 
 while {true} do {
 	sleep 1;
-	if (debugperf) then {hint format ["Tiempo transcurrido: %1 para %2 markers", time - _currentTime, count markers]};
+	if (debugperf) then {hint format ["Total Time : %1 for %2 markers", time - _currentTime, count markers]};
 	_currentTime = time;
 
 	waitUntil {!isNil "Slowhand"};
